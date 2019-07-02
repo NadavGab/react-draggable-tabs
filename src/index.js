@@ -20,6 +20,7 @@ class Tabs extends Component {
             selectTab={this.props.selectTab}
             closeTab = {this.props.closeTab}
             active={tab.active}
+            editTab={this.props.editTab}
           />
         ))}
         <div className="react-tabs-child">

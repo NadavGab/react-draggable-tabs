@@ -77,10 +77,15 @@ class Tab extends Component {
             onClose(e)
         }
     }
+    const onEdit = (e) => {
+            e.preventDefault();
+            this.props.editTab(this.props.index, this.props.id)
+    }
 
     return connectDragSource(connectDropTarget(
       <div className={this.props.active ? "react-tabs-tab react-tabs-active" : "react-tabs-tab"} onMouseUp={onClick}>
         <div className="react-tabs-tab-content" >{content}</div>
+        <div className="fa fa-pencil react-tabs-tab-close" onMouseUp={onEdit}/>
         <div className="react-tabs-tab-close" onMouseUp={onClose}>×</div>
     </div>,
     ));

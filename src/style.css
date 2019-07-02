@@ -36,7 +36,7 @@
 .react-tabs-tab-content{
     text-align: center;
     display: inline-block;
-    width: calc(100% - 20px);
+    width: calc(100% - 38px);
     overflow: hidden;
 
 }

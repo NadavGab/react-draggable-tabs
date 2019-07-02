@@ -1,9 +1,12 @@
 {
-  "name": "react-draggable-tabs",
+  "name": "tradair-tabs",
   "version": "1.0.8",
   "description": "Atom-like tabs for react",
   "main": "build/index.js",
-  "repository": "https://github.com/ZaninAndrea/react-draggable-tabs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZaninAndrea/react-draggable-tabs.git"
+  },
   "peerDependencies": {
     "react": "^16.1.1"
   },
@@ -20,10 +23,7 @@
     "build": "webpack",
     "build-example": "webpack --config webpack.config.example.js"
   },
-  "author": {
-    "name": "andreazanin",
-    "email": "99.zanin@gmail.com"
-  },
+  "author": "andreazanin <99.zanin@gmail.com>",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
@@ -34,5 +34,14 @@
     "css-loader": "^0.28.7",
     "react-addons-update": "^15.6.2",
     "style-loader": "^0.18.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/ZaninAndrea/react-draggable-tabs/issues"
+  },
+  "homepage": "https://github.com/ZaninAndrea/react-draggable-tabs#readme",
+  "directories": {
+    "doc": "docs",
+    "example": "example"
+  },
+  "license": "ISC"
 }
