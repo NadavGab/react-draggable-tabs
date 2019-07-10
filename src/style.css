@@ -10,7 +10,7 @@
     -webkit-flex-flow: row nowrap;
     justify-content: flex-start;
     border-bottom: 2px solid red;
-    height:37px;
+    height:29px;
     overflow: hidden;
 }
 
@@ -29,7 +29,6 @@
     opacity: 1;
     font-size: 12px;
     flex-grow: 0;
-    margin-left: auto;
     font-family: "Segoe UI",sans-serif;
 }
 

@@ -1,5 +1,5 @@
 .react-tabs-container{
-    background-color: #001f27;
+    background-color: #2a2f30;
     border-color: #002b36;
 }
 
@@ -8,12 +8,12 @@
 }
 
 .react-tabs-tab-close{
-    border-color: #001f27;
+    border-color: #2a2f30;
 }
 
 .react-tabs-tab-close:hover{
     background-color: #45c3e3;
-    color: #001f27;
+    color: #2a2f30;
     border-color: #45c3e3;
 }
 
