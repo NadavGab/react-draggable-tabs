@@ -10,23 +10,31 @@ class App extends Component {
         this.selectTab = this.selectTab.bind(this);
         this.closedTab = this.closedTab.bind(this);
         this.addTab = this.addTab.bind(this);
+        this.editTab = this.editTab.bind(this);
+        this.enableTabEdit = this.enableTabEdit.bind(this);
         this.state = {
             tabs: [
                 {
                     id: 1,
                     content: "Cute Cat",
                     active: true,
+                    title: "test 1",
+                    isTitleEditable: false,
                     display: <img src="http://memecrunch.com/meme/RFHY/cute-cat/image.png" alt="cute cat" width="500px"/>
                 },
                 {
                     id: 2,
-                    content: <span><i className="fa fa-paw" aria-hidden="true"></i> Cute Dog</span>,
+                    content: "test 2",
+                    title: "test 2",
+                    isTitleEditable: false,
                     display: <img src="http://slappedham.com/wp-content/uploads/2014/06/Cute-White-Dog.jpg" alt="cute dog" width="500px"/>
                 },
                 {
                     id: 3,
-                    content: 'Cute Duck',
-                    display: <iframe title="DuckDuckGo" src="https://duckduckgo.com/"  style={{border:"0",margin:"50px", width:"500px", height:"800px"}}/>
+                    title: "test 3",
+                    isTitleEditable: false,
+                    content: <input type="text" onChange={e => this.editTab(e, this.state.id)}></input>,
+                    display: <h1>Hi</h1>
                 },
             ]
         };
@@ -56,6 +64,29 @@ class App extends Component {
         })
     }
 
+    editTab(e, selectedID) {
+        let newTitle = e.target.value;
+        this.setState((state, props) => {
+            const newTabs = state.tabs.map(tab => ({
+                ...tab,
+                active: tab.id === selectedID,
+                title: tab.id === selectedID ? newTitle : tab.title
+            }))
+            return {tabs: newTabs}
+        });
+    }
+
+    enableTabEdit(isTitleEditable, selectedID) {
+        this.setState((state, props) => {
+            const newTabs = state.tabs.map(tab => ({
+                ...tab,
+                active: tab.id === selectedID,
+                isTitleEditable: tab.id === selectedID && !isTitleEditable  //Toggle the editable input for the tab title
+            }))
+            return {tabs: newTabs}
+        })
+    }
+
     closedTab(removedIndex, removedID) {
         this.setState((state, props) => {
             let newTabs = [...state.tabs]
@@ -77,7 +108,7 @@ class App extends Component {
             let newTabs = [...state.tabs]
             newTabs.push({
                 id: newTabs.length+1,
-                content: 'Cute *',
+                title: 'Cute *',
                 display: <div key={newTabs.length+1}>Cute *</div>
             })
 
@@ -88,7 +119,7 @@ class App extends Component {
         const activeTab = this.state.tabs.filter(tab => tab.active === true)
         return (
             <div>
-                <Tabs moveTab={this.moveTab} selectTab={this.selectTab} closeTab={this.closedTab} tabs={this.state.tabs}>
+                <Tabs moveTab={this.moveTab} selectTab={this.selectTab} closeTab={this.closedTab} editTab={this.editTab} enableTabEdit={this.enableTabEdit} tabs={this.state.tabs}>
                     <button onClick={this.addTab}>+</button>
                 </Tabs>
                 {activeTab.length !== 0

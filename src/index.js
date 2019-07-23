@@ -16,11 +16,14 @@ class Tabs extends Component {
             index={i}
             id={tab.id}
             content={tab.content}
+            title={tab.title}
             moveTab={this.props.moveTab}
             selectTab={this.props.selectTab}
             closeTab = {this.props.closeTab}
             active={tab.active}
             editTab={this.props.editTab}
+            enableTabEdit={this.props.enableTabEdit}
+            isTitleEditable={tab.isTitleEditable}
           />
         ))}
         <div className="react-tabs-child">
