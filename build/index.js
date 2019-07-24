@@ -4126,7 +4126,7 @@ var Tabs = function (_Component) {
             active: tab.active,
             editTab: _this2.props.editTab,
             enableTabEdit: _this2.props.enableTabEdit,
-            isContentEditable: tab.isTitleEditable
+            isContentEditable: tab.isContentEditable
           });
         }),
         _react2.default.createElement(
