@@ -3589,7 +3589,7 @@ var Tab = function (_Component) {
 
             var enableEdit = function enableEdit(e) {
                 e.preventDefault();
-                _this2.props.enableTabEdit(_this2.props.isTitleEditable, _this2.props.id);
+                _this2.props.enableTabEdit(_this2.props.isContentEditable, _this2.props.id);
             };
 
             var onEdit = function onEdit(e) {
@@ -3600,7 +3600,7 @@ var Tab = function (_Component) {
             var toggleEdit = function toggleEdit(e) {
                 if (e.keyCode === 13) {
                     e.preventDefault();
-                    _this2.props.enableTabEdit(_this2.props.isTitleEditable, _this2.props.id);
+                    _this2.props.enableTabEdit(_this2.props.isContentEditable, _this2.props.id);
                 }
             };
 
@@ -3612,10 +3612,10 @@ var Tab = function (_Component) {
                     { className: 'react-tabs-tab-content' },
                     _react2.default.createElement(
                         'div',
-                        { className: 'titleText', style: this.props.isTitleEditable ? { display: 'none' } : { display: 'inline-block' } },
-                        this.props.title
+                        { className: 'titleText', style: this.props.isContentEditable ? { display: 'none' } : { display: 'inline-block' } },
+                        content
                     ),
-                    _react2.default.createElement('input', { onChange: onEdit, onKeyUp: toggleEdit, value: this.props.title, style: this.props.isTitleEditable ? { display: 'inline-block' } : { display: 'none' } }),
+                    _react2.default.createElement('input', { onChange: onEdit, onKeyUp: toggleEdit, value: content, style: this.props.isContentEditable ? { display: 'inline-block' } : { display: 'none' } }),
                     _react2.default.createElement('div', { className: 'fa fa-pencil react-tabs-tab-close', onMouseUp: enableEdit }),
                     _react2.default.createElement(
                         'div',
@@ -4120,14 +4120,13 @@ var Tabs = function (_Component) {
             index: i,
             id: tab.id,
             content: tab.content,
-            title: tab.title,
             moveTab: _this2.props.moveTab,
             selectTab: _this2.props.selectTab,
             closeTab: _this2.props.closeTab,
             active: tab.active,
             editTab: _this2.props.editTab,
             enableTabEdit: _this2.props.enableTabEdit,
-            isTitleEditable: tab.isTitleEditable
+            isContentEditable: tab.isTitleEditable
           });
         }),
         _react2.default.createElement(

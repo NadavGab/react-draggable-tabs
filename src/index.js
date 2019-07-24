@@ -22,7 +22,7 @@ class Tabs extends Component {
             active={tab.active}
             editTab={this.props.editTab}
             enableTabEdit={this.props.enableTabEdit}
-            isContentEditable={tab.isTitleEditable}
+            isContentEditable={tab.isContentEditable}
           />
         ))}
         <div className="react-tabs-child">
