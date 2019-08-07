@@ -82,7 +82,9 @@ class App extends Component {
             }))
             return {tabs: newTabs}
         }, () => {
-            inputEl.select(); // highlight the value of the input
+            if (inputEl) {
+                inputEl.select(); // highlight the value of the input
+            }
         })
     }
 
