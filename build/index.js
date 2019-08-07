@@ -3616,11 +3616,7 @@ var Tab = function (_Component) {
                         content
                     ),
                     _react2.default.createElement('input', { onChange: onEdit, onKeyUp: toggleEditOnEnter, value: content, style: this.props.isContentEditable ? { display: 'inline-block' } : { display: 'none' } }),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'fa fa-pencil react-tabs-tab-close', onMouseUp: enableEdit },
-                        'E'
-                    ),
+                    _react2.default.createElement('div', { className: 'fa fa-pencil react-tabs-tab-close', onMouseUp: enableEdit }),
                     _react2.default.createElement(
                         'div',
                         { className: 'react-tabs-tab-close', onMouseUp: onClose },
