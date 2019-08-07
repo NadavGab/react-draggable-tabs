@@ -1,6 +1,6 @@
 {
   "name": "tradair-tabs",
-  "version": "1.9.3",
+  "version": "1.9.4",
   "description": "Atom-like tabs for react",
   "main": "build/index.js",
   "repository": {
