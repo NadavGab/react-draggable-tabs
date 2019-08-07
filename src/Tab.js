@@ -100,7 +100,7 @@ class Tab extends Component {
         <div className="react-tabs-tab-content" >
           <div className="titleText" style={this.props.isContentEditable ? {display: 'none'} : {display: 'inline-block'}}>{content}</div>
           <input onChange={onEdit} onKeyUp={toggleEditOnEnter} value={content} style={this.props.isContentEditable ? {display: 'inline-block'} : {display: 'none'}} />
-          <div className="fa fa-pencil react-tabs-tab-close" onMouseUp={enableEdit}>E</div>
+          <div className="fa fa-pencil react-tabs-tab-close" onMouseUp={enableEdit}></div>
           <div className="react-tabs-tab-close" onMouseUp={onClose}>×</div>
         </div>
     </div>,
