@@ -73,7 +73,7 @@ class App extends Component {
         });
     }
 
-    enableTabEdit(isContentEditable, selectedID) {
+    enableTabEdit(isContentEditable, selectedID, inputEl) {
         this.setState((state, props) => {
             const newTabs = state.tabs.map(tab => ({
                 ...tab,
@@ -81,6 +81,8 @@ class App extends Component {
                 isContentEditable: tab.id === selectedID && !isContentEditable  //Toggle the editable input for the tab content
             }))
             return {tabs: newTabs}
+        }, () => {
+            inputEl.select(); // highlight the value of the input
         })
     }
 

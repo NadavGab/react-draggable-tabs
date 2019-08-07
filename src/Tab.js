@@ -80,18 +80,18 @@ class Tab extends Component {
 
     const enableEdit = (e) => {
             e.preventDefault();
-            this.props.enableTabEdit(this.props.isContentEditable, this.props.id)
+            this.props.enableTabEdit(this.props.isContentEditable, this.props.id, e.currentTarget.previousSibling)
     }
 
     const onEdit = (e) => {
-            e.preventDefault();
-            this.props.editTab(e, this.props.id)
+      e.preventDefault();
+      this.props.editTab(e, this.props.id)
     }
 
-    const toggleEdit = (e) => {
+    const toggleEditOnEnter = (e) => {
         if (e.keyCode === 13) {
           e.preventDefault();
-          this.props.enableTabEdit(this.props.isContentEditable, this.props.id)
+          this.props.enableTabEdit(this.props.isContentEditable, this.props.id, e.currentTarget)
         }
     }
 
@@ -99,8 +99,8 @@ class Tab extends Component {
       <div className={this.props.active ? "react-tabs-tab react-tabs-active" : "react-tabs-tab"} onMouseUp={onClick}>
         <div className="react-tabs-tab-content" >
           <div className="titleText" style={this.props.isContentEditable ? {display: 'none'} : {display: 'inline-block'}}>{content}</div>
-          <input onChange={onEdit} onKeyUp={toggleEdit} value={content} style={this.props.isContentEditable ? {display: 'inline-block'} : {display: 'none'}} />
-          <div className="fa fa-pencil react-tabs-tab-close" onMouseUp={enableEdit}></div>
+          <input onChange={onEdit} onKeyUp={toggleEditOnEnter} value={content} style={this.props.isContentEditable ? {display: 'inline-block'} : {display: 'none'}} />
+          <div className="fa fa-pencil react-tabs-tab-close" onMouseUp={enableEdit}>E</div>
           <div className="react-tabs-tab-close" onMouseUp={onClose}>×</div>
         </div>
     </div>,
