@@ -99,7 +99,7 @@ class Tab extends Component {
       <div className={this.props.active ? "react-tabs-tab react-tabs-active" : "react-tabs-tab"} onMouseUp={onClick}>
         <div className="react-tabs-tab-content" >
           <div className="titleText" style={this.props.isContentEditable ? {display: 'none'} : {display: 'inline-block'}}>{content}</div>
-          <input onChange={onEdit} onKeyPress={toggleEditOnEnter} value={content} style={this.props.isContentEditable ? {display: 'inline-block'} : {display: 'none'}} />
+          <input onChange={onEdit} onKeyDown={toggleEditOnEnter} value={content} style={this.props.isContentEditable ? {display: 'inline-block'} : {display: 'none'}} />
           <div className="fa fa-pencil react-tabs-tab-close" onMouseUp={enableEdit}></div>
           <div className="react-tabs-tab-close" onMouseUp={onClose}>×</div>
         </div>
